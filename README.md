@@ -22,9 +22,19 @@ curl -X POST http://your_pico_ip:8000/ -d "amount=50&category=food"
 ssh (your nas username)@YOUR_NAS_IP
 cat /mnt/storage/expenses.txt
 
-I still have plans for this project so updates will be coming soon.
-First and Final upgrade for this project, i was able to add a prediction system that would predict how much your spending would be for next month. As long as you logging in your purchases daily into the pi pico w. 
+Updates#1
+First upgrade for this project, i was able to add a prediction system that would predict how much your spending would be for next month. As long as you logging in your purchases daily into the pi pico w. 
 
 To add this feature, run :
 nano analyze_expenses.py in any terminals.
-then copy paste 
+then copy paste expense_prediction1 into it then save and exit.
+
+Updates #2 the previous prediction has been updates so it tracks across months.
+To implement this update, run nano analyze_expenses.py
+then copy paste file expense_prediction2 into it then save and exit.
+If you had implement updates #1 and are wondering how to update it, just run :
+rm analyze_expenses.py (which deletes the previous one)
+then just run nano analyze_expense.py and paste expense_prediction2
+
+This would be my final update for this project most likely. Any confusions you may message me. 
+Please give feedback about my project and any improvements i could possibly make. 
