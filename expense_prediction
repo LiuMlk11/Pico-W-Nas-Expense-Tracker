@@ -1,0 +1,33 @@
+from datetime import datetime
+from collections import defaultdict
+
+expenses = defaultdict(float)
+
+try:
+    with open('/mnt/storage/expenses.txt', 'r') as f:
+        for line in f:
+            if 'amount=' in line:
+                parts = line.split('&')
+                for part in parts:
+                    if 'amount=' in part:
+                        amount = float(part.split('=')[1])
+                        today = datetime.now().strftime('%Y-%m-%d')
+                        expenses[today] += amount
+except FileNotFoundError:
+    print("No expenses file yet")
+    exit()
+
+total = sum(expenses.values())
+days_tracked = len(expenses)
+avg_per_day = total / days_tracked if days_tracked > 0 else 0
+predicted_month = avg_per_day * 30
+
+print("\n--- Daily Spending ---")
+for day in sorted(expenses.keys()):
+    print(f"{day}: ${expenses[day]:.2f}")
+
+print(f"\n--- Summary ---")
+print(f"Days tracked: {days_tracked}")
+print(f"Total spent: ${total:.2f}")
+print(f"Average per day: ${avg_per_day:.2f}")
+print(f"\nPredicted next month: ${predicted_month:.2f}")
