@@ -8,7 +8,8 @@ Pico W
     
 Download pico_w_server.py
 Change WiFi: YOUR_WIFI_NAME and YOUR_WIFI_PASSWORD
-Open Thonny, paste code, run
+Open Thonny, paste code, run 
+make sure you saved it into the pi pico.
 
 ssh (your nas username)@YOUR_NAS_IP
 nano nas_receiver.py
@@ -20,3 +21,5 @@ curl -X POST http://your_pico_ip:8000/ -d "amount=50&category=food"
 
 ssh (your nas username)@YOUR_NAS_IP
 cat /mnt/storage/expenses.txt
+
+I still have plans for this project so updates will be coming soon.
