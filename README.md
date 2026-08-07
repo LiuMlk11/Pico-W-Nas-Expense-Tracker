@@ -1,2 +1,22 @@
 # Pico-W-Nas-Expense-Tracker
 Basically a Network expense tracker using a pi pico W and a decade old NAS pc.
+Pico W → NAS Expense Tracker
+Pico W sends expense data to a NAS server over WiFi.
+Setup
+
+Pico W
+    
+Download pico_w_server.py
+Change WiFi: YOUR_WIFI_NAME and YOUR_WIFI_PASSWORD
+Open Thonny, paste code, run
+
+ssh (your nas username)@YOUR_NAS_IP
+nano nas_receiver.py
+paste code, save (Ctrl+X, Y, Enter)
+python3 nas_receiver.py
+
+Test it by running :
+curl -X POST http://your_pico_ip:8000/ -d "amount=50&category=food"
+
+ssh (your nas username)@YOUR_NAS_IP
+cat /mnt/storage/expenses.txt
