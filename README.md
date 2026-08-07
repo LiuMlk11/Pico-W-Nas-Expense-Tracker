@@ -23,3 +23,8 @@ ssh (your nas username)@YOUR_NAS_IP
 cat /mnt/storage/expenses.txt
 
 I still have plans for this project so updates will be coming soon.
+First and Final upgrade for this project, i was able to add a prediction system that would predict how much your spending would be for next month. As long as you logging in your purchases daily into the pi pico w. 
+
+To add this feature, run :
+nano analyze_expenses.py in any terminals.
+then copy paste 
