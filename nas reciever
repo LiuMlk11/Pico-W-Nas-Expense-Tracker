@@ -1,0 +1,20 @@
+from http.server import HTTPServer, BaseHTTPRequestHandler
+
+class ExpenseHandler(BaseHTTPRequestHandler):
+    def do_POST(self):
+        content_length = int(self.headers.get('Content-Length', 0))
+        body = self.rfile.read(content_length).decode()
+
+        print(f"Received: {body}")
+
+        with open('/mnt/storage/expenses.txt', 'a') as f:
+            f.write(body + '\n')
+
+        self.send_response(200)
+        self.send_header('Content-type', 'text/plain')
+        self.end_headers()
+        self.wfile.write(b'Data saved')
+
+server = HTTPServer(('0.0.0.0', 5000), ExpenseHandler)
+print("NAS listening on port 5000...")
+server.serve_forever()
