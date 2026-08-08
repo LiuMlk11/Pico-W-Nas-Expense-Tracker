@@ -29,7 +29,7 @@ To add this feature, run :
 nano analyze_expenses.py in any terminals.
 then copy paste expense_prediction1 into it then save and exit.
 
-Updates #2 the previous prediction has been updates so it tracks across months.
+Updates #2 the previous prediction has been updateed so it tracks across months.
 To implement this update, run nano analyze_expenses.py
 then copy paste file expense_prediction2 into it then save and exit.
 If you had implement updates #1 and are wondering how to update it, just run :
