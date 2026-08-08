@@ -1,4 +1,4 @@
-# Pico-W-Nas-Expense-Tracker
+# Expense Tracker & analysis
 Basically a Network expense tracker using a pi pico W and a decade old NAS pc.
 Pico W → NAS Expense Tracker
 Pico W sends expense data to a NAS server over WiFi.
